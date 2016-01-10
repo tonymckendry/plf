@@ -1,0 +1,127 @@
+body {
+  padding-top: 20px;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#header img{
+  margin: 0 auto;
+  height: 10vh;
+}
+
+#nav{
+  border-bottom: 1px solid black;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#nav ul{
+  list-style: none;
+  text-align: center;
+}
+
+#nav li{
+  display: inline;
+  margin-right: 1vw;
+  /*margin-left: 1vw;*/
+  padding: 14px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 1.2em;
+}
+
+#nav li:hover{
+  background-color: black;
+  color: white;
+}
+
+#firstNav{
+  margin-left: -.5vw;
+}
+
+#banner{
+  margin: 0 auto;
+  text-align: center;
+}
+#banner img{
+  width: 92vw;
+}
+
+.tourDate{
+  border-top: 1px solid black;
+  padding-left: 10vw;
+  position: relative;
+}
+.tourDateLeft{
+  display: inline-block;
+}
+.tourDateRight{
+  display: inline-block;
+  position: absolute;
+  left: 40vw;
+  bottom: -5px;
+}
+
+.tourTime{
+  position: absolute;
+  display: inline-block;
+  right: 10vw;
+  bottom: 20px;
+}
+
+#tourHead{
+  margin: 0 auto;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100vw;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#tourText{
+  font-weight: normal;
+}
+
+#tourVenue{
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+#albumHeader{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#albumContainer{
+  margin: 0 auto;
+  width: 100vw;
+  text-align: center;
+}
+
+#album{
+  display: inline-block;
+  margin: 20px;
+  margin-bottom: 0;
+  width: 15vw;
+  font-size: .9em;
+  vertical-align: top;
+}
+
+#album img{
+  width: 15vw;
+}
