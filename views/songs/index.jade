@@ -17,5 +17,6 @@ block content
       li Blog
   br
   each val, index in results
-    div#trackList
-      p #{results[index].trackname}
+    a(href='music/song/' + results[index].trackname + '/')
+      div#trackList
+        p #{results[index].trackname}
