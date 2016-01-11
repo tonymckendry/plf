@@ -80,4 +80,33 @@ router.get('/songs', function(req, res, next){
     res.render('songs/index', {results: results})
   })
 })
+
+router.get('/setlists', function(req, res, next){
+  setlist().select().then(function(results){
+    var list = [];
+    var objList = [];
+    for (var i = 0; i < results.length; i++) {
+      var obj = {}
+      obj.title = results[i].title
+      obj.date = results[i].date
+      obj.venue = results[i].venue
+      obj.city = results[i].city
+      obj.state = results[i].state
+      obj.country = results[i].country
+      var count = 0;
+      for (var j = 0; j < results.length; j++) {
+        if (results[j].title == results[i].title){
+          count++;
+        }
+      }
+      obj.count = count;
+      if (list.indexOf(results[i].title) < 0){
+        list.push(results[i].title)
+        objList.push(obj)
+      }
+    }
+    console.log(objList)
+    res.render('setlists/index', {results: list})
+  })
+})
 module.exports = router;
