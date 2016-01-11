@@ -35,12 +35,13 @@ a {
 
 #nav li{
   display: inline;
-  margin-right: 1vw;
+  margin-right: 10px;
   /*margin-left: 1vw;*/
   padding: 14px;
   padding-left: 50px;
   padding-right: 50px;
   font-size: 1.2em;
+  position: relative;
 }
 
 #nav li:hover{
@@ -50,6 +51,33 @@ a {
 
 #firstNav{
   margin-left: -.5vw;
+}
+
+#drop{
+  display: none;
+  position: absolute;
+  left: -39px;
+  top: 40px;
+}
+
+#nav li:hover ul{
+  display:block;
+}
+
+#drop li{
+  display: block;
+  padding: 0;
+  width: 115%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 23px;
+  background-color: black;
+}
+
+#drop li:hover{
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
 }
 
 #banner{
