@@ -65,6 +65,12 @@ a {
   padding-left: 10vw;
   position: relative;
 }
+
+.tourDate:hover{
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+}
+
 .tourDateLeft{
   display: inline-block;
 }
@@ -105,6 +111,8 @@ a {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  clear: both;
+  text-align: center;
 }
 
 #albumContainer{
@@ -120,8 +128,87 @@ a {
   width: 15vw;
   font-size: .9em;
   vertical-align: top;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+#album:hover{
+  border: 2px solid black;
 }
 
 #album img{
   width: 15vw;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#album img:hover{
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#albumContent{
+  width: 95vw;
+  margin-top: 20px;
+  position: relative;
+}
+
+#albumArt{
+  margin-left: 5vw;
+  float: left;
+  vertical-align: bottom;
+  width: 40%;
+}
+
+#albumInfo{
+  float: left;
+  /*margin-left: 10vw;*/
+  vertical-align: bottom;
+  width: 50%;
+}
+
+#albumTracks{
+  position: absolute;
+  width: inherit;
+}
+
+.albumTrack{
+  border: 1px solid black;
+  padding-left: 10px
+}
+
+.albumTrack:hover{
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+}
+
+#albumTrackLength{
+  position: absolute;
+  right: 10px;
+}
+
+.songLive{
+  border-top: 1px solid black;
+  padding-left: 10vw;
+  position: relative;
+  padding-top:15px;
+  padding-bottom: 15px;
+}
+
+.songLive p{
+  display: inline;
+  margin-right: 50px;
+}
+
+.tourBottom{
+  border-top: 1px solid black;
+  height: 1vh;
+  width: 100vw;
+}
+
+.liveEvent{
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+#trackList{
+  border-top: 1px solid black;
+  text-align: center;
 }

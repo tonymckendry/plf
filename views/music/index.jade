@@ -7,23 +7,26 @@ block content
     div#albumHeader
       p Albums
     each val, index in albums
-      div#album 
-        img(src='/images/albums/' + albums[index].name + '.jpg')
-        p #{albums[index].name}
-        p #{albums[index].year}
-        p #{albums[index].tracks} tracks  
+      a(href='/music/' + albums[index].name + '/')
+        div#album 
+          img(src='/images/albums/' + albums[index].name + '.jpg')
+          p #{albums[index].name}
+          p #{albums[index].year}
+          p #{albums[index].tracks} tracks  
     div#albumHeader
       p Singles
     each val, index in singles
-      div#album 
-        img(src='/images/albums/' + singles[index].name + '.jpg')
-        p #{singles[index].name}
-        p #{singles[index].year}
+      a(href='/music/' + singles[index].name + '/')
+        div#album 
+          img(src='/images/albums/' + singles[index].name + '.jpg')
+          p #{singles[index].name}
+          p #{singles[index].year}
     div#albumHeader
       p Other Releases
     each val, index in others
-      div#album 
-        img(src='/images/albums/' + others[index].name + '.jpg')
-        p #{others[index].name}
-        p #{others[index].year}
-        p #{others[index].tracks} tracks 
+      a(href='/music/' + others[index].name + '/')
+        div#album 
+          img(src='/images/albums/' + others[index].name + '.jpg')
+          p #{others[index].name}
+          p #{others[index].year}
+          p #{others[index].tracks} tracks 

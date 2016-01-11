@@ -13,8 +13,12 @@ function albums(){
   return knex('albums');
 }
 
-function singles(){
-  return knex('singles')
+function tracks(){
+  return knex('tracks')
+}
+
+function setlist(){
+  return knex('setlists')
 }
 
 /* GET home page. */
@@ -50,4 +54,30 @@ router.get('/music', function(req, res, next){
   })
 })
 
+router.get('/music/:name', function(req, res, next){
+  var track
+  var album
+  tracks().where('album', req.params.name).then(function(result){
+    track = result;
+  })
+  albums().where('name', req.params.name).then(function(results){
+    album = results
+    res.render('music/show', {tracks: track, album: album})
+    console.log(album)
+    console.log(track);
+  })
+})
+
+router.get('/music/song/:name', function(req, res, next){
+  setlist().where('song', req.params.name).then(function(results){
+    console.log(results)
+    res.render('music/song/show', {results: results})
+  })
+})
+
+router.get('/songs', function(req, res, next){
+  tracks().select().then(function(results){
+    res.render('songs/index', {results: results})
+  })
+})
 module.exports = router;
