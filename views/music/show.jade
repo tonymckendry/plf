@@ -8,8 +8,8 @@ block content
     div#albumArt
       img(src='/images/albums/' + album[0].name + '.jpg')
     div#albumInfo
-      p #{album[0].year}
-      p #{album[0].tracks} tracks
+      p#albumYear #{album[0].year}
+      p#trackCount #{album[0].tracks} tracks
       p #{album[0].description}
       div#albumTracks
         each val, index in tracks

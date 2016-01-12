@@ -3,5 +3,5 @@ block content
   br
   each val, index in results
     a(href='music/song/' + results[index].trackname + '/')
-      div#trackList
+      div#trackList(class=results[index].album)
         p #{results[index].trackname}

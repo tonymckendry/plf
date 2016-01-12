@@ -159,6 +159,7 @@ a {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   clear: both;
   text-align: center;
+  font-size: 1.5em;
 }
 
 #albumContainer{
@@ -257,4 +258,41 @@ a {
 #trackList{
   border-top: 1px solid black;
   text-align: center;
+}
+
+.Making{
+  background-image: url('../images/banners/Making.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Spilling{
+  background-image: url('../images/banners/Spilling.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.songStats{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  clear: both;
+  text-align: center;
+}
+
+.songStats p{
+  display: inline-block;
+  margin: 20px 80px;
+}
+
+.songTitle{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#albumYear{
+  font-size: 1.5em;
+  margin-top: 0;
 }
