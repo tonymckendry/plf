@@ -116,7 +116,7 @@ a {
 .tourDateRight{
   display: inline-block;
   position: absolute;
-  left: 40vw;
+  left: 30vw;
   bottom: -5px;
 }
 
@@ -146,11 +146,14 @@ a {
 
 #tourText{
   font-weight: normal;
+  width: 20vw;
 }
 
 #tourVenue{
   font-weight: bolder;
-  font-size: 2em;
+  font-size: 1.5em;
+  width: 30vw;
+  text-align: center;
 }
 
 #albumHeader{
