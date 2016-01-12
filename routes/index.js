@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var knex = require('knex')({
   client: 'pg',
-  connection: 'postgress://localhost/plf'
+  connection: process.env.DATABASE_URL || 'postgress://localhost/plf'
 })
 
 function tour(){
