@@ -116,6 +116,9 @@ a {
 
 .tourDateLeft{
   display: inline-block;
+  top: 10px;
+  position: absolute;
+  left: 10vw;
 }
 .tourDateRight{
   display: inline-block;
@@ -128,7 +131,7 @@ a {
   width: 30vw;
   text-align: center;
   vertical-align: middle;
-  margin-left: 10vw;
+  margin-left: 25vw;
   margin-bottom: 20px;
 }
 
@@ -136,7 +139,7 @@ a {
   position: absolute;
   display: inline-block;
   right: 10vw;
-  bottom: 0;
+  bottom: 20px;
   float: right;
   text-align: left;
   width: 10vw;
