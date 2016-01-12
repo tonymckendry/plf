@@ -95,14 +95,18 @@ a {
 .tourDate{
   border-top: 1px solid black;
   padding-left: 10vw;
+  padding-right: 10vw;
   position: relative;
 }
+
 .tourDateSet{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding-left: 10vw;
   position: relative;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  padding-top: 10px;
+  padding-bottom: -10px;
 }
 
 .tourDate:hover{
@@ -115,22 +119,37 @@ a {
 }
 .tourDateRight{
   display: inline-block;
-  position: absolute;
-  left: 30vw;
-  bottom: -5px;
+  /*position: relative;*/
+  /*position: absolute;*/
+  margin: 0 auto;
+  /*left: 30vw;*/
+  /*bottom: 15%;*/
+  /*vertical-align: middle;*/
+  width: 30vw;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 10vw;
+  margin-bottom: 20px;
 }
 
 .tourTime{
   position: absolute;
   display: inline-block;
   right: 10vw;
-  bottom: 20px;
+  bottom: 0;
+  float: right;
+  text-align: left;
+  width: 10vw;
 }
+
 .setTime{
   position: absolute;
   display: inline-block;
   right: 10vw;
   bottom: 0;
+  float: right;
+  text-align: left;
+  width: 10vw;
 }
 
 
