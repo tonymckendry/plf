@@ -106,7 +106,17 @@ router.get('/setlists', function(req, res, next){
       }
     }
     console.log(objList)
-    res.render('setlists/index', {results: list})
+    res.render('setlists/index', {results: objList})
   })
 })
+
+router.get('/setlists/:title', function(req, res, next){
+  var title = req.params.title
+  setlist().where('title', title).then(function(results){
+    console.log(results)
+    var count = results.length
+    res.render('setlists/show', {results: results, count: count})
+  })
+})
+
 module.exports = router;

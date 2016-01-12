@@ -1,0 +1,29 @@
+extends ../layout
+block content
+  br
+  div(class='tourDateSet')
+    div(class='tourDateLeft')
+      - var date = results[0].date
+      - date = date.toString();
+      - date = date.slice(0,15);
+      p#tourDate 
+        b Date: 
+          span#tourText #{date}
+      p#tourLocation 
+        b Location: 
+          span#tourText #{results[0].city}, #{results[0].state}, #{results[0].country}
+    div(class='tourDateRight')  
+      p#tourVenue 
+          span#tourText #{results[0].title}
+    div(class='setTime')
+      p#tourTime 
+        b Venue: 
+          span#tourText #{results[0].venue}
+      p#tourTime
+        b Songs:
+          span#tourText  #{count}
+  br
+  each val, index in results
+    a(href='../../music/song/' + results[index].song + '/')
+      div#trackList
+        p #{results[index].song}

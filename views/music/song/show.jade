@@ -1,20 +1,5 @@
 extends ../../layout
 block content
-  div#header
-    a(href='/')
-      img(src="/images/plLogo.png")
-  div#nav
-    ul
-      a(href='/music')
-        li#firstNav Music
-      li Pictures
-      li Videos
-      a(href='/tour')
-        li Calendar
-      li Archive
-      li Market
-      li Forum 
-      li Blog
   br
   div#albumHeader
     p #{results[0].song}
@@ -34,10 +19,10 @@ block content
             span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
       div(class='tourDateRight')  
         p#tourVenue 
-            span#tourText #{results[index].venue}
+            span#tourText #{results[index].title}
       div(class='tourTime')
         p#tourTime 
-          b Event: 
-            span#tourText #{results[index].title}
+          b Venue: 
+            span#tourText #{results[index].venue}
   div(class='tourBottom')
     p 

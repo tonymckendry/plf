@@ -4,4 +4,30 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    div#header
+      a(href='/')
+        img(src="images/plLogo.png")
+    div#nav
+      ul
+        a(href='/music')
+          li#firstNav Music
+            ul#drop
+              li Discography 
+              a(href='/songs')
+                li Songs
+        li Shows
+          ul#drop
+            a(href='/setlists')
+              li Setlists
+            li Venues
+            a(href='/tour')
+              li Upcoming
+        li Pictures
+        li Videos
+          ul#drop
+            li Music Videos 
+            li Live Videos
+        li Market
+        li Forum 
+        li Blog
     block content
