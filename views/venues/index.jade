@@ -1,0 +1,15 @@
+extends ../layout
+block content
+  br
+  div#tourHead
+    p Venue List
+  br
+  each val, index in results
+    div(class='tourDate')
+      div(class='tourDateLeft')
+        p#tourLocation 
+          b Location: 
+            span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
+      div(class='tourDateRight')  
+        p#tourVenue 
+            span#tourText #{results[index].venue}

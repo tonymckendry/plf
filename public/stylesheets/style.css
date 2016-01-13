@@ -160,13 +160,16 @@ a {
 .setTime{
   position: absolute;
   display: inline-block;
-  right: 10vw;
-  bottom: 0;
+  right: 2vw;
+  bottom: 10%;
   float: right;
   text-align: left;
-  width: 10vw;
+  width: 25vw;
 }
+.setTime p {
+  margin-top: 0px;
 
+}
 
 #tourHead{
   margin: 0 auto;
