@@ -236,9 +236,16 @@ a {
 
 #albumArt{
   margin-left: 5vw;
+  margin-right: 5vw;
   float: left;
   vertical-align: bottom;
-  width: 40%;
+  width: 30%;
+
+  /*display: inline-block;*/
+}
+
+#albumArt img{
+  width: 100%;
 }
 
 #albumInfo{
@@ -246,6 +253,7 @@ a {
   /*margin-left: 10vw;*/
   vertical-align: bottom;
   width: 50%;
+  /*display: inline-block;*/
 }
 
 #albumTracks{

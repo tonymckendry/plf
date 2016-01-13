@@ -4,16 +4,15 @@ block content
   div#albumHeader
     p #{album[0].name}
   br
-  div#albumContent
-    div#albumArt
-      img(src='/images/albums/' + album[0].name + '.jpg')
-    div#albumInfo
-      p#albumYear #{album[0].year}
-      p#trackCount #{album[0].tracks} tracks
-      p #{album[0].description}
-      div#albumTracks
-        each val, index in tracks
-          a(href='/music/song/' + tracks[index].trackname)
-            div(class='albumTrack')
-              p #{tracks[index].trackname}
-                span#albumTrackLength #{tracks[index].length}
+  div#albumArt
+    img(src='/images/albums/' + album[0].name + '.jpg' id='albumPic')
+  div#albumInfo
+    p#albumYear #{album[0].year}
+    p#trackCount #{album[0].tracks} tracks
+    p #{album[0].description}
+    div#albumTracks
+      each val, index in tracks
+        a(href='/music/song/' + tracks[index].trackname)
+          div(class='albumTrack')
+            p #{tracks[index].trackname}
+              span#albumTrackLength #{tracks[index].length}
