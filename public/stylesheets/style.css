@@ -130,7 +130,7 @@ a {
   display: inline-block;
   top: 10px;
   position: absolute;
-  left: 10vw;
+  left: 5vw;
 }
 .tourDateRight{
   display: inline-block;
@@ -160,15 +160,15 @@ a {
 .setTime{
   position: absolute;
   display: inline-block;
-  right: 2vw;
+  right: 1vw;
   bottom: 10%;
   float: right;
   text-align: left;
-  width: 25vw;
+  width: 20vw;
 }
 .setTime p {
   margin-top: 0px;
-
+  margin-bottom: 10px;
 }
 
 #tourHead{

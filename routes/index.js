@@ -155,7 +155,25 @@ router.get('/venues', function(req, res, next){
     }
     console.log(objList)
     res.render('venues/index', {results: objList})
+  })
 })
+
+router.get('/venues/:name', function(req, res, next){
+  setlist().where('venue', req.params.name).then(function(results){
+    var list = [];
+    var objList = [];
+    for (var i = 0; i < results.length; i++) {
+      var obj = {}
+      obj.title = results[i].title
+      obj.date = results[i].date
+      if (list.indexOf(results[i].title) < 0){
+        objList.push(obj)
+        list.push(results[i].title)
+      }
+    }
+    res.render('venues/show', {results: objList})
+    console.log(objList)
+  })
 })
 
 module.exports = router;

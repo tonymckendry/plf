@@ -5,11 +5,12 @@ block content
     p Venue List
   br
   each val, index in results
-    div(class='tourDate')
-      div(class='tourDateLeft')
-        p#tourLocation 
-          b Location: 
-            span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
-      div(class='tourDateRight')  
-        p#tourVenue 
-            span#tourText #{results[index].venue}
+    a(href='venues/' + results[index].venue)
+      div(class='tourDate')
+        div(class='tourDateLeft')
+          p#tourLocation 
+            b Location: 
+              span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
+        div(class='tourDateRight')  
+          p#tourVenue 
+              span#tourText #{results[index].venue}

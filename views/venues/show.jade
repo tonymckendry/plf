@@ -1,2 +1,31 @@
 extends ../layout
 block content
+  br
+  div#albumHeader
+    p #{results[0].venue}
+  div(class='songStats')
+    p Total sets played: #{results.length}
+    p Last played: #{results[0].date.toString().slice(0,15)}
+    p First played: #{results[results.length-1].date.toString().slice(0,15)}
+  each val, index in results
+    a(href='/setlists/' + results[index].title)
+      div(class='tourDate')
+        div(class='tourDateLeft')
+          - var date = results[index].date
+          - date = date.toString();
+          - date = date.slice(0,15);
+          p#tourDate 
+            b Date: 
+              span#tourText #{date}
+          p#tourLocation 
+            b Location: 
+              span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
+        div(class='tourDateRight')  
+          p#tourVenue 
+              span#tourText #{results[index].title}
+        div(class='tourTime')
+          p#tourTime 
+            b Venue: 
+              span#tourText #{results[index].venue}
+  div(class='tourBottom')
+    p 
