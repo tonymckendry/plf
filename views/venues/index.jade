@@ -6,7 +6,7 @@ block content
   br
   each val, index in results
     a(href='venues/' + results[index].venue)
-      div(class='tourDate')
+      div(class='tourDate' class='hue')
         div(class='tourDateLeft')
           p#tourLocation 
             b Location: 
@@ -14,3 +14,5 @@ block content
         div(class='tourDateRight')  
           p#tourVenue 
               span#tourText #{results[index].venue}
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='javascripts/hue.js')
