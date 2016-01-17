@@ -108,6 +108,7 @@ a {
   padding-left: 10vw;
   padding-right: 10vw;
   position: relative;
+  z-index: 1;
 }
 
 .tourDateSet{
@@ -150,11 +151,11 @@ a {
 .tourTime{
   position: absolute;
   display: inline-block;
-  right: 10vw;
+  right: 7vw;
   bottom: 20px;
   float: right;
   text-align: left;
-  width: 10vw;
+  width: 20vw;
 }
 
 .setTime{
@@ -169,6 +170,18 @@ a {
 .setTime p {
   margin-top: 0px;
   margin-bottom: 10px;
+}
+
+.setSong{
+
+}
+
+.setNotes{
+  color: gray;
+  /*position: absolute;*/
+  right: 75%;
+  font-style: italic;
+
 }
 
 #tourHead{
@@ -306,6 +319,7 @@ a {
 #trackList{
   border-top: 1px solid black;
   text-align: center;
+  position: relative;
 }
 
 .Making{
@@ -343,4 +357,12 @@ a {
 #albumYear{
   font-size: 1.5em;
   margin-top: 0;
+}
+
+.tran{
+  width: 20px;
+  position: absolute;
+  bottom: -25px;
+  left: 49.5%;
+  z-index: 2;
 }

@@ -26,4 +26,8 @@ block content
   each val, index in results
     a(href='../../music/song/' + results[index].song + '/')
       div#trackList
-        p #{results[index].song}
+        p.setSong #{results[index].song}
+        if results[index].notes !== null
+          p.setNotes #{results[index].notes}
+        if results[index].tran !== null
+          img(src='../images/transition.png' class='tran')

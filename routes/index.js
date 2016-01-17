@@ -166,6 +166,11 @@ router.get('/venues/:name', function(req, res, next){
       var obj = {}
       obj.title = results[i].title
       obj.date = results[i].date
+      obj.city = results[i].city
+      obj.state = results[i].state
+      obj.country = results[i].country
+      obj.venue = results[i].venue
+      console.log(obj)
       if (list.indexOf(results[i].title) < 0){
         objList.push(obj)
         list.push(results[i].title)
