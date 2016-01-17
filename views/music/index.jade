@@ -7,7 +7,7 @@ block content
       p Albums
     each val, index in albums
       a(href='/music/' + albums[index].name + '/')
-        div#album 
+        div#album.hue
           img(src='/images/albums/' + albums[index].name + '.jpg')
           p #{albums[index].name}
           p #{albums[index].year}
@@ -16,7 +16,7 @@ block content
       p Singles
     each val, index in singles
       a(href='/music/' + singles[index].name + '/')
-        div#album 
+        div#album.hue 
           img(src='/images/albums/' + singles[index].name + '.jpg')
           p #{singles[index].name}
           p #{singles[index].year}
@@ -24,8 +24,10 @@ block content
       p Other Releases
     each val, index in others
       a(href='/music/' + others[index].name + '/')
-        div#album 
+        div#album.hue
           img(src='/images/albums/' + others[index].name + '.jpg')
           p #{others[index].name}
           p #{others[index].year}
           p #{others[index].tracks} tracks 
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='javascripts/hue.js')

@@ -25,9 +25,11 @@ block content
   br
   each val, index in results
     a(href='../../music/song/' + results[index].song + '/')
-      div#trackList
+      div.hue#trackList
         p.setSong #{results[index].song}
         if results[index].notes !== null
           p.setNotes #{results[index].notes}
         if results[index].tran !== null
           img(src='../images/transition.png' class='tran')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='javascripts/hue.js')

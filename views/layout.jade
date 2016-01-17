@@ -10,12 +10,12 @@ html
     div#nav
       ul
         a(href='/music')
-          li#firstNav Music
+          li#firstNav.hue Music
             ul#drop
               li Discography 
               a(href='/songs')
                 li Songs
-        li Shows
+        li.hue Shows
           ul#drop.shows
             a(href='/setlists')
               li Setlists
@@ -23,12 +23,14 @@ html
               li Venues
             a(href='/tour')
               li Upcoming
-        li Pictures
-        li Videos
+        li.hue Pictures
+        li.hue Videos
           ul#drop
             li Music Videos 
             li Live Videos
-        li Market
-        li Forum 
-        li Blog
+        li.hue Market
+        li.hue Forum 
+        li.hue Blog
+    script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+    script(type='text/javascript' src='/javascripts/hue.js')
     block content 
