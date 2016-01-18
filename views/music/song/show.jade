@@ -9,7 +9,7 @@ block content
     p First played: #{results[results.length-1].date.toString().slice(0,15)}
   each val, index in results
     a(href='/setlists/' + results[index].title)
-      div(class='tourDate')
+      div.hue(class='tourDate')
         div(class='tourDateLeft')
           - var date = results[index].date
           - date = date.toString();
@@ -29,3 +29,5 @@ block content
               span#tourText #{results[index].venue}
   div(class='tourBottom')
     p 
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='/javascripts/hue.js')

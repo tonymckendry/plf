@@ -1,5 +1,5 @@
 body {
-  padding-top: 20px;
+  padding-top: 5px;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: linear-gradient(155deg, white 70%, #e9e8e8 90%, #d5d5d5);
@@ -14,8 +14,8 @@ a {
 }
 
 #header{
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
   margin: 0 auto;
   text-align: center;
   padding: 5px;
@@ -44,7 +44,7 @@ a {
 #nav li{
   display: inline;
   margin-right: 10px;
-  /*margin-left: 1vw;*/
+  /*margin-left: 1px;*/
   padding: 14px;
   padding-left: 50px;
   padding-right: 51px;
@@ -54,6 +54,7 @@ a {
 
 #nav li:hover{
   background-color: black;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.5)
 }
 
 #firstNav{
@@ -74,16 +75,17 @@ a {
 }
 
 #drop li{
+  z-index: 5;
   display: block;
   padding: 0;
-  width: 100%;
+  width: 103%;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 2px;
   padding-left: 4px;
   background-color: white;
   color: black;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   -webkit-transition:background .35s;
   -moz-transition:background .35s;
   -o-transition:background .35s;
@@ -92,6 +94,7 @@ a {
   -moz-transition:color .2s;
   -o-transition:color .2s;
   transition:color .2s;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.5)
 }
 
 #drop li:hover{
@@ -100,7 +103,7 @@ a {
 }
 
 .shows{
-  width: 95%;
+  width: 93.5%;
 }
 
 #banner{
@@ -181,7 +184,7 @@ a {
 }
 
 .setSong{
-
+margin: 0 auto;
 }
 
 .setNotes{
@@ -189,7 +192,7 @@ a {
   /*position: absolute;*/
   right: 75%;
   font-style: italic;
-
+  margin: 3px;
 }
 
 #tourHead{
@@ -330,6 +333,7 @@ a {
   border-top: 1px solid black;
   text-align: center;
   position: relative;
+  padding: 10px;
 }
 
 .Making{
@@ -372,7 +376,7 @@ a {
 .tran{
   width: 20px;
   position: absolute;
-  bottom: -25px;
+  bottom: -10px;
   left: 49.5%;
   z-index: 2;
 }

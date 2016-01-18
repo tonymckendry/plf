@@ -13,6 +13,8 @@ block content
     div#albumTracks
       each val, index in tracks
         a(href='/music/song/' + tracks[index].trackname)
-          div(class='albumTrack')
+          div.hue(class='albumTrack')
             p #{tracks[index].trackname}
               span#albumTrackLength #{tracks[index].length}
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='/javascripts/hue.js')

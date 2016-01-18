@@ -3,5 +3,7 @@ block content
   br
   each val, index in results
     a(href='music/song/' + results[index].trackname + '/')
-      div#trackList(class=results[index].album)
+      div#trackList.hue
         p #{results[index].trackname}
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='/javascripts/hue.js')      

@@ -69,13 +69,12 @@ router.get('/music/:name', function(req, res, next){
 })
 
 router.get('/music/song/:name', function(req, res, next){
-  var setlists
+
   setlist().where('song', req.params.name).then(function(results){
-    setlists = results
-  })
-  tracks().where('trackname', req.params.name).then(function(aResult){
-    console.log(aResult[0].album)
-    res.render('music/song/show', {results: setlists, album: aResult})
+    tracks().where('trackname', req.params.name).then(function(aResult){
+      console.log(aResult[0].album)
+      res.render('music/song/show', {results: results, album: aResult})
+    })
   })
 })
 
