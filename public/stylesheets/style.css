@@ -387,3 +387,7 @@ margin: 0 auto;
 -o-transition:background .5s;
 transition:background .5s;
 }
+
+#map{
+  height: 70vh;
+}

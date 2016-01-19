@@ -23,7 +23,10 @@ function setlist(){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  setlist().select('venue','city', 'state').distinct().then(function(results){
+    
+    res.render('index', { results: results});
+  })
 });
 
 router.get('/tour', function(req, res, next){
