@@ -32,7 +32,7 @@ function initialize(places) {
         if (il < locs.length) {            //  if the counter < 10, call the loop function
            myLoop();             //  ..  again which will trigger another
         }                        //  ..  setTimeout()
-     }, 500)
+     }, 250)
   }
   myLoop()
   function requ(){
