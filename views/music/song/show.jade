@@ -7,6 +7,10 @@ block content
     p Total times played: #{results.length}
     p Last played: #{results[0].date.toString().slice(0,15)}
     p First played: #{results[results.length-1].date.toString().slice(0,15)}
+  div(class='songStats')
+    - var percent = (results.length / total).toFixed(2).toString()
+    - percent = percent.slice(2, percent.length)
+    p Played at #{percent}% of shows
   each val, index in results
     a(href='/setlists/' + results[index].title)
       div.hue(class='tourDate')

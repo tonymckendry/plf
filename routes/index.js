@@ -24,7 +24,7 @@ function setlist(){
 /* GET home page. */
 router.get('/', function(req, res, next) {
   setlist().select('venue','city', 'state').distinct().then(function(results){
-    
+
     res.render('index', { results: results});
   })
 });
@@ -62,12 +62,12 @@ router.get('/music/:name', function(req, res, next){
   var album
   tracks().where('album', req.params.name).then(function(result){
     track = result;
-  })
-  albums().where('name', req.params.name).then(function(results){
-    album = results
-    res.render('music/show', {tracks: track, album: album})
-    console.log(album)
-    console.log(track);
+    albums().where('name', req.params.name).then(function(results){
+      album = results
+      res.render('music/show', {tracks: track, album: album})
+      console.log(album)
+      console.log(track);
+    })
   })
 })
 
@@ -75,21 +75,25 @@ router.get('/music/song/:name', function(req, res, next){
 
   setlist().where('song', req.params.name).then(function(results){
     tracks().where('trackname', req.params.name).then(function(aResult){
-      console.log(aResult[0].album)
-      res.render('music/song/show', {results: results, album: aResult})
+      setlist().select('title').distinct().then(function(bResult){
+        console.log(aResult[0].album)
+        var total = bResult.length;
+        res.render('music/song/show', {results: results, album: aResult, total: total})
+
+      })
     })
   })
 })
 
 router.get('/songs', function(req, res, next){
-  tracks().select().then(function(results){
-    var songlist = []
-    for (var i = 0; i < results.length; i++) {
-      songlist.push(results[i].trackname)
-    }
-    songlist.sort()
-    console.log(songlist)
-    res.render('songs/index', {results: results, songs: songlist})
+  setlist().select('song').distinct().orderBy('song','asc').then(function(results){
+    // var songlist = []
+    // for (var i = 0; i < results.length; i++) {
+    //   songlist.push(results[i].trackname)
+    // }
+    // songlist.sort()
+    console.log(results)
+    res.render('songs/index', {results: results})
   })
 })
 
