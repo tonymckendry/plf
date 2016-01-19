@@ -15,7 +15,7 @@ function getLocs(){
 
 
 function initialize(places) {
-  var center = new google.maps.LatLng(39.839418, 0);
+  var center = new google.maps.LatLng(39.839418, -15);
   var location = getZone("denver, co");
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -106,7 +106,7 @@ initialize()
       var marker = new google.maps.Marker({
         position: coords[i],
         map: map,
-        title: 'Fillmore'
+        title: coords[i]
       })
     }
   }
