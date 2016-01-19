@@ -7,12 +7,11 @@ var locs = [];
 function getLocs(){
   var count = document.getElementById('0').innerHTML
   for (var i = 0; i < count; i++) {
-    var j = i + 1
+    var j = i + 10
     locs.push(document.getElementById(j).innerHTML)
   }
   console.log(locs)
 }
-
 
 function initialize(places) {
   var center = new google.maps.LatLng(39.839418, 0);
@@ -20,30 +19,20 @@ function initialize(places) {
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: center,
-      zoom: 3
+      zoom: 2
     });
 
   console.log('locs: ' + locs.length);
-  var il = 0
-  function myLoop () {           //  create a loop function
-     setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-        requ();          //  your code here
-        il++;                     //  increment the counter
-        if (il < locs.length) {            //  if the counter < 10, call the loop function
-           myLoop();             //  ..  again which will trigger another
-        }                        //  ..  setTimeout()
-     }, 500)
-  }
-  myLoop()
-  function requ(){
+  for (var i = 0; i < locs.length; i++) {
 
 
   var request = {
     location: center,
     radius: '500',
-    query: locs[il+1]
+    query: locs[i]
   };
 
+  // console.log("Query is: " + request.query)
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
 
@@ -68,7 +57,7 @@ function getCoords(address){
   var obj1;
   console.log("address is " + address)
   var getter = $.ajax({
-  url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0",
+  url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBxcZeaQfl3fvRd-7px7Lbc6-u3L0HRCD4",
   // url: "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0",
   method: "GET",
   dataType: "json"
@@ -86,7 +75,7 @@ getter.done(function(response){
 };
 function getZone(address){
   var getter = $.ajax({
-  url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0",
+  url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBxcZeaQfl3fvRd-7px7Lbc6-u3L0HRCD4",
   // url: "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0",
   method: "GET",
   dataType: "json"
@@ -110,4 +99,3 @@ initialize()
       })
     }
   }
-  myLoop();

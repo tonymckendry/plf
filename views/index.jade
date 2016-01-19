@@ -2,14 +2,14 @@ extends layout
 
 block content
   div(id='map')
-  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
-  script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0&libraries=places')
-  script(type='text/javascript' src='/javascripts/map.js')
   ul
     li(id=0) #{results.length}
     each val, index in results
       li(id=index+1) #{results[index].venue}, #{results[index].city}, #{results[index].state}
-      script tester('HELLO')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0&libraries=places')
+  script(type='text/javascript' src='/javascripts/map.js')
+
     
   
   //- script initialize()
