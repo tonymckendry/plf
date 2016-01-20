@@ -27,7 +27,7 @@ $(addSong).on('click', function(){
     'img.tranArrow#ta' + i + '(src="/images/tranArrow.png")'
   ))
   $('p#' + i).append($.jade(
-    'input(type="checkbox" name="ta'+ i +'")'
+    'input.tranCheck(type="checkbox" name="ta'+ i +'")'
   ))
   i++
 })
