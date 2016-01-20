@@ -130,6 +130,17 @@ router.get('/setlists/new', function(req, res, next){
   res.render('setlists/new')
 })
 
+router.post('/setlists', function(req, res){
+  var obj = {
+    title: req.body.title,
+    date: req.body.date,
+    venue: req.body.venue,
+    city: req.body.city,
+    state: req.body.state
+  }
+  console.log(obj)
+})
+
 router.get('/setlists/:title', function(req, res, next){
   var title = req.params.title
   setlist().where('title', title).then(function(results){

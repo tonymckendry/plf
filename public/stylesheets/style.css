@@ -399,3 +399,64 @@ transition:background .5s;
 .bottom p{
   margin: 0;
 }
+
+#setSong{
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+
+
+.newSet{
+  width: 30vw;
+}
+
+#formDiv{
+  text-align: center;
+}
+
+#formDiv input{
+  font-size: 2em;
+}
+
+#cityState{
+  margin-bottom: 10px;
+}
+
+#newLeft{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#newLeft input{
+  width: 35vw;
+  text-align: center;
+}
+#newRight input{
+  width: 35vw;
+  text-align: center;
+}
+
+#newRight{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#newTitle{
+  width: 72vw;
+  text-align: center;
+}
+
+.newLabel{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tranArrow{
+  margin-bottom: -5px;
+  margin-left: 10px;
+  width: 30px;
+  bottom: 5px;
+  right: 10vw;
+}
