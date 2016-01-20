@@ -1,0 +1,31 @@
+extends ../layout
+block content 
+  div#albumHeader
+    h5 Submit a New Setlist
+  div
+    form
+      p 
+        label(for='title') Event Title
+      p
+        input(name='title', type='text')
+      p
+        label(for='date') Event Date
+      p
+        input(type='date' name='date')
+      p
+        label(for='venue') Event Venue
+      p
+        input(type='text' name='venue')
+      p
+        label(for='city') Event City
+      p
+        input(type='text' name='city')
+      p
+        label(for='state') Event State
+      p
+        input(type='text' name='state')
+      div#trackList.bottom
+        p Setlist
+      
+      
+        

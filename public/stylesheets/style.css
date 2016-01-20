@@ -391,3 +391,11 @@ transition:background .5s;
 #map{
   height: 70vh;
 }
+
+.bottom{
+  border-bottom: 1px solid black;
+}
+
+.bottom p{
+  margin: 0;
+}

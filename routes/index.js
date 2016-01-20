@@ -126,6 +126,10 @@ router.get('/setlists', function(req, res, next){
   })
 })
 
+router.get('/setlists/new', function(req, res, next){
+  res.render('setlists/new')
+})
+
 router.get('/setlists/:title', function(req, res, next){
   var title = req.params.title
   setlist().where('title', title).then(function(results){
@@ -134,6 +138,7 @@ router.get('/setlists/:title', function(req, res, next){
     res.render('setlists/show', {results: results, count: count})
   })
 })
+
 
 router.get('/venues', function(req, res, next){
   setlist().select().then(function(results){
