@@ -29,21 +29,22 @@ block content
         p Setlist
       div#songForm
         div#setSong
+          p Total Songs: 
+            input#totalSongs(type='text' name='totalSongs' value=1 readonly)
           p#1
             label.newLabel(for='song1') Song 1
-            input.newSet(name'song1')
+            input.newSet(type='text' name = 'song1')
             label.newLabel(for='notes1') Notes
-            input.newSet(name'notes1')
+            input.newSet(name = 'notes1')
             img.tranArrow#ta1(src='/images/tranArrow.png')
-            input.tranCheck(type='checkbox' name='ta1')
-            //- input(type='checkbox' name='tran')
-            //- label(for='tran') >
-      input(type='submit') 
+            input.tranCheck(type='text' name='ta1' readonly value='')
+            input#setSubmit(type='submit') 
     button#addSong + song
       
   script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
   script(type='text/javascript' src='/javascripts/jquery.jadedom.js')
   script(type='text/javascript' src='/javascripts/setlistForm.js')
   script(type='text/javascript' src='/javascripts/tranArrow.js')
+  script(type='text/javascript' src='/javascripts/hue.js') 
       
         

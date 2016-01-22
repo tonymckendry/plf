@@ -90,3 +90,19 @@ $("#drop li").mouseenter(function(){
 $("#drop li").mouseleave(function(){
   $(this).css("color", "black")
 })
+
+$("#setSubmit").mouseenter(function(){
+  var hue = hueMaker()
+  $(this).css("background-color", hue)
+})
+$("#setSubmit").mouseleave(function(){
+  $(this).css("background-color", "#afff93")
+})
+
+$("#addSong").mouseenter(function(){
+  var hue = hueMaker()
+  $(this).css("background-color", hue)
+})
+$("#addSong").mouseleave(function(){
+  $(this).css("background-color", "white")
+})

@@ -5,6 +5,7 @@ var i = 2;
 $(addSong).on('click', function(){
   // $(songForm).append('div#setSong')
   console.log("working");
+  $('#totalSongs').attr('value', i)
   $(songForm).append($.jade(
     'div#setSong' + i
   ))
@@ -27,7 +28,7 @@ $(addSong).on('click', function(){
     'img.tranArrow#ta' + i + '(src="/images/tranArrow.png")'
   ))
   $('p#' + i).append($.jade(
-    'input.tranCheck(type="checkbox" name="ta'+ i +'")'
+    'input.tranCheck(type="text" name="ta'+ i +'" value="")'
   ))
   i++
 })

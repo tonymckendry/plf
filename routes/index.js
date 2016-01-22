@@ -138,7 +138,18 @@ router.post('/setlists', function(req, res){
     city: req.body.city,
     state: req.body.state
   }
-  console.log(obj)
+  var total = req.body.totalSongs
+  for (var i = 0; i < total; i++) {
+    var songi = "song" + i
+    var song = req.body['song' + (i+1).toString()]
+    var notes = req.body['notes' + (i+1).toString()]
+    var tran = req.body['ta' + (i+1).toString()]
+      obj.song = song
+      obj.notes = notes
+      obj.tran = tran
+      console.log(obj)
+      setlist().insert(obj).promise();
+  }
 })
 
 router.get('/setlists/:title', function(req, res, next){
