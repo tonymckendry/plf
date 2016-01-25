@@ -76,7 +76,7 @@ router.get('/music/song/:name', function(req, res, next){
   setlist().where('song', req.params.name).then(function(results){
     tracks().where('trackname', req.params.name).then(function(aResult){
       setlist().select('title').distinct().then(function(bResult){
-        console.log(aResult[0].album)
+        // console.log(aResult[0].album)
         var total = bResult.length;
         res.render('music/song/show', {results: results, album: aResult, total: total})
 
@@ -85,19 +85,42 @@ router.get('/music/song/:name', function(req, res, next){
   })
 })
 
-router.get('/songs', function(req, res, next){
-  setlist().select('song').distinct().orderBy('song','asc').then(function(results){
-    // var songlist = []
-    // for (var i = 0; i < results.length; i++) {
-    //   songlist.push(results[i].trackname)
-    // }
-    // songlist.sort()
-    console.log(results)
-    res.render('songs/index', {results: results})
+router.get('/setlists', function(req, res, next){
+  setlist().select().orderBy('date').then(function(results){
+    var list = [];
+    var objList = [];
+    for (var i = 0; i < results.length; i++) {
+      var obj = {}
+      obj.title = results[i].title
+      obj.date = results[i].date
+      obj.venue = results[i].venue
+      obj.city = results[i].city
+      obj.state = results[i].state
+      obj.country = results[i].country
+      var count = 0;
+      for (var j = 0; j < results.length; j++) {
+        if (results[j].title == results[i].title){
+          count++;
+        }
+      }
+      obj.count = count;
+      if (list.indexOf(results[i].title) < 0){
+        list.push(results[i].title)
+        objList.push(obj)
+      }
+    }
+    var today = new Date();
+    var yyyy = today.getFullYear();
+    console.log(yyyy)
+    tour().select().first().then(function(tour){
+
+      res.render('setlists/index', {results: objList, today:today, tour: tour})
+    })
+
   })
 })
 
-router.get('/setlists', function(req, res, next){
+router.get('/setlists/list', function(req, res, next){
   setlist().select().then(function(results){
     var list = [];
     var objList = [];
@@ -122,7 +145,7 @@ router.get('/setlists', function(req, res, next){
       }
     }
     console.log(objList)
-    res.render('setlists/index', {results: objList})
+    res.render('setlists/list', {results: objList})
   })
 })
 

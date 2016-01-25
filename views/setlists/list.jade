@@ -1,0 +1,31 @@
+extends ../layout
+block content
+  br
+  div#tourHead
+    p Setlists
+  br
+  each val, index in results
+    a(href="/setlists/" + results[index].title)
+      div.hue(class='tourDate')
+        div(class='tourDateLeft')
+          - var date = results[index].date
+          - date = date.toString();
+          - date = date.slice(0,15);
+          p#tourDate 
+            b Date: 
+              span#tourText #{date}
+          p#tourLocation 
+            b Location: 
+              span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
+        div(class='tourDateRight')  
+          p#tourVenue 
+              span#tourText #{results[index].title}
+        div(class='setTime')
+          p#tourTime 
+            b Venue: 
+              span#tourText #{results[index].venue}
+          p#tourTime
+            b Songs:
+              span#tourText #{results[index].count}
+    script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+    script(type='text/javascript' src='javascripts/hue.js')

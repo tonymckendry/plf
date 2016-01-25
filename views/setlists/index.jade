@@ -1,31 +1,45 @@
 extends ../layout
 block content
-  br
-  div#tourHead
-    p Setlists
-  br
-  each val, index in results
-    a(href="/setlists/" + results[index].title)
-      div.hue(class='tourDate')
-        div(class='tourDateLeft')
-          - var date = results[index].date
-          - date = date.toString();
-          - date = date.slice(0,15);
-          p#tourDate 
-            b Date: 
-              span#tourText #{date}
-          p#tourLocation 
-            b Location: 
-              span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
-        div(class='tourDateRight')  
-          p#tourVenue 
-              span#tourText #{results[index].title}
-        div(class='setTime')
-          p#tourTime 
-            b Venue: 
-              span#tourText #{results[index].venue}
-          p#tourTime
-            b Songs:
-              span#tourText #{results[index].count}
-    script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
-    script(type='text/javascript' src='javascripts/hue.js')
+  link(rel='stylesheet', href='/stylesheets/setlists.css')
+  div.container
+    div.date.trips
+      p#last Last Show:
+      p#month #{results[results.length-1].date.toString().slice(4, 7)}
+      p#day #{results[results.length-1].date.toString().slice(8, 10)}
+      p#year #{results[results.length-1].date.toString().slice(11, 16)}
+    div.showtitle.trips
+      p#show #{results[results.length-1].title}
+      p#showvenue #{results[results.length-1].venue}
+      p#showvenue #{results[results.length-1].city}, #{results[results.length-1].state}, #{results[results.length-1].country}
+      p#showvenue #{results[results.length-1].count} songs
+    div#setCount2.trips
+      a(href='/setlists/list')
+        button.hue Go to Setlists
+      p#there Setlists in
+      p#db Database:
+      p#number #{results.length}
+      
+    div.date.trips
+      p#last Next Show:
+      p#month #{tour.date.toString().slice(4, 7)}
+      p#day #{tour.date.toString().slice(8, 10)}
+      p#year #{tour.date.toString().slice(11, 16)}
+    div.showtitle.trips
+      p#show #{tour.venue}
+      p#showvenue #{tour.city}, #{tour.state}, #{tour.country}
+      - var time = parseInt(tour.time.toString().slice(0,2))
+      - if (time > 12){time = time-12}
+      - time += ':00'
+      - if (parseInt(tour.time.toString().slice(0,2)) > 12){time+= ' PM'}
+      - else {time+= ' AM'}
+      - console.log(time)
+      p#showvenue #{time}
+  div(id='map')
+  ul#maplist
+    li(id=0) #{results.length}
+    each val, index in results
+      li(id=index+1) #{results[index].venue}, #{results[index].city}, #{results[index].state}
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
+  script(type='text/javascript' src='/javascripts/hue.js')
+  script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAYUDLJ7lxoWbuskxEjwAhCYn2beys99W0&libraries=places')
+  script(type='text/javascript' src='/javascripts/map.js')

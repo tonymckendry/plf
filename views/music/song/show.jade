@@ -1,7 +1,7 @@
 extends ../../layout
 block content
   br
-  div#albumHeader(class=album[0].album.slice(0, album[0].album.indexOf(' ')) class='songTitle')
+  div#albumHeader(class='songTitle')
     p #{results[0].song}
   div(class='songStats')
     p Total times played: #{results.length}
@@ -10,6 +10,7 @@ block content
   div(class='songStats')
     - var percent = (results.length / total).toFixed(2).toString()
     - percent = percent.slice(2, percent.length)
+    - if (percent[0] == '0'){ percent = percent[1]}
     p Played at #{percent}% of shows
   each val, index in results
     a(href='/setlists/' + results[index].title)

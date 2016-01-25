@@ -2,7 +2,7 @@ extends ../layout
 block content
   br
   each val, index in results
-    a(href='music/song/' + results[index].trackname + '/')
+    a(href='music/song/' + results[index].song + '/')
       div#trackList.hue
         p #{results[index].song}
   script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')

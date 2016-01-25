@@ -8,6 +8,7 @@ require('dotenv').load();
 
 var routes = require('./routes/index');
 var setlists = require('./routes/setlists');
+var songs = require('./routes/songs');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/setlists', setlists);
+app.use('/songs', songs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
