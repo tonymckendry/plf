@@ -9,6 +9,7 @@ require('dotenv').load();
 var routes = require('./routes/index');
 var setlists = require('./routes/setlists');
 var songs = require('./routes/songs');
+var auth = require('./routes/auth')
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', auth)
 app.use('/', routes);
 app.use('/setlists', setlists);
 app.use('/songs', songs);

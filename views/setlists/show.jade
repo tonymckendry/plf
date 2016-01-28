@@ -29,7 +29,11 @@ block content
         p.setSong #{results[index].song}
         if results[index].notes !== null
           p.setNotes #{results[index].notes}
-        if results[index].tran !== null
+        if results[index].performers !== null
+          div.performers
+            p Additional Performers: 
+            p #{results[index].performers}
+        if results[index].tran == 'x'
           img(src='../images/transition.png' class='tran')
   script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
   script(type='text/javascript' src='/javascripts/hue.js')

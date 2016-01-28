@@ -511,3 +511,12 @@ transition:background .5s;
   border-radius: 5px;
   border: 1px solid gray;
 }
+
+.performers{
+  margin-top: 5px;
+  font-size: .7em;
+}
+
+.performers p {
+  margin: 0;
+}

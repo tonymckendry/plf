@@ -121,7 +121,7 @@ router.get('/setlists', function(req, res, next){
 })
 
 router.get('/setlists/list', function(req, res, next){
-  setlist().select().then(function(results){
+  setlist().select().orderBy('date', 'desc').then(function(results){
     var list = [];
     var objList = [];
     for (var i = 0; i < results.length; i++) {
@@ -152,29 +152,33 @@ router.get('/setlists/list', function(req, res, next){
 router.get('/setlists/new', function(req, res, next){
   res.render('setlists/new')
 })
-
+//////////////////////////////////////////////////////////////////////////////////
 router.post('/setlists', function(req, res){
-  var obj = {
-    title: req.body.title,
-    date: req.body.date,
-    venue: req.body.venue,
-    city: req.body.city,
-    state: req.body.state
-  }
+  var objsarr = []
+  var title = req.body.title
   var total = req.body.totalSongs
   for (var i = 0; i < total; i++) {
-    var songi = "song" + i
+    var obj = {
+      title: req.body.title,
+      date: req.body.date,
+      venue: req.body.venue,
+      city: req.body.city,
+      state: req.body.state
+    }
     var song = req.body['song' + (i+1).toString()]
     var notes = req.body['notes' + (i+1).toString()]
     var tran = req.body['ta' + (i+1).toString()]
       obj.song = song
       obj.notes = notes
       obj.tran = tran
-      console.log(obj)
-      setlist().insert(obj).promise();
+    objsarr.push(obj)
   }
+  setlist().insert(objsarr).then(function(results){
+    console.log('inserted')
+    res.redirect('setlists/' + title)
+  })
 })
-
+//////////////////////////////////////////////////////////////////////////////////
 router.get('/setlists/:title', function(req, res, next){
   var title = req.params.title
   setlist().where('title', title).then(function(results){
