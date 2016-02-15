@@ -30,8 +30,21 @@ html
             li Live Videos
         li.hue Market
         li.hue Forum 
-        a(href='auth/signin')
-          li.hue Sign In 
+        if (username)
+          -var usered = username.slice(0,25)
+          li.hued.usered
+            span.stat Logged In:
+            if (username.length > 24)
+              span.userNamed(href='#') Hi, #{usered}...
+              span.cheat #{usered}
+            else
+              span.userNamed(href='#') Hi, #{username}
+              span.cheat #{username}
+            a.profileLink(href='#') Profile
+            a.logoutLink(href='/auth/signout') Log Out 
+        else
+          a(href='auth/signin')
+            li.hue Sign In 
     script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
     script(type='text/javascript' src='/javascripts/hue.js')
     block content 

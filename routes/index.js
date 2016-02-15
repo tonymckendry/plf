@@ -25,7 +25,7 @@ function setlist(){
 router.get('/', function(req, res, next) {
   setlist().select('venue','city', 'state').distinct().then(function(results){
 
-    res.render('index', { results: results});
+    res.render('index', { results: results, username: req.cookies.username});
   })
 });
 

@@ -61,7 +61,7 @@ function hueMaker(){
   else if (rand > 2){
     var a = 0
     var b = 0
-    var c = 255
+    var c = 100
   }
   else {
     var a = 0
@@ -81,6 +81,12 @@ $(".hue").mouseenter(function(){
 
 $(".hue").mouseleave(function(){
   $(this).css({"background": "transparent"}, 2000)
+})
+
+$(document).ready(function(){
+  var hue = hueMaker()
+  $('.hued').css("background-color", hue)
+  $('.cheat').css('color', hue)
 })
 
 $("#drop li").mouseenter(function(){

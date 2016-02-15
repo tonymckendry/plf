@@ -1,12 +1,29 @@
+///////////////MODULES//////////////
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-require('dotenv').load();
 
+var session = require('cookie-session');
+require('dotenv').load();
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy
+
+/////////////DB/////////////
+var knex = require('knex')({
+  client: 'pg',
+  connection: 'postgres://localhost/plf'
+})
+
+function User(){
+  return knex('users')
+}
+
+/////////////ROUTES///////////////////
 var routes = require('./routes/index');
+var users = require('./routes/users')
 var setlists = require('./routes/setlists');
 var songs = require('./routes/songs');
 var auth = require('./routes/auth')
@@ -24,8 +41,46 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({keys:[process.env.SESSION_KEY1, process.env.SESSION_KEY2]}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new FacebookStrategy({
+  clientID: process.env.LINKEDIN_CLIENT_ID,
+  clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+  callbackURL: "http://localhost:3000/auth/facebook/callback/",
+  enableProof: false
+},
+  function(accessToken, refreshToken, profile, done){
+    console.log(profile)
+    User().select().where('fb_id', profile.id).then(function(fbUser){
+      if (fbUser.length){
+
+        return done(null, fbUser)
+      } else {
+
+        var obj = {
+          fb_id: profile.id,
+          fullName: profile.displayName
+        }
+
+        User().insert(obj).then(function(facebook){
+            return done(null, obj)
+          })
+
+      }
+    })
+    })
+)
+passport.serializeUser(function(user, done){
+  done(null, user)
+})
+passport.deserializeUser(function(user, done){
+  done(null, user)
+})
 
 app.use('/', routes);
+app.use('/', users)
 app.use('/auth', auth)
 app.use('/setlists', setlists);
 app.use('/songs', songs);

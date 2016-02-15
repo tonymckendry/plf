@@ -520,3 +520,63 @@ transition:background .5s;
 .performers p {
   margin: 0;
 }
+
+.usered{
+  width: 300px;
+}
+
+.hued{
+  position: relative;
+  width: 300px;
+}
+
+.userNamed{
+  font-size: .75em;
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  left: 0;
+}
+
+.profileLink{
+  font-size: .75em;
+  position: absolute;
+  bottom: 5px;
+  left: 10%;
+  color: blue;
+  text-decoration: underline;
+}
+
+.logoutLink{
+font-size: .75em;
+position: absolute;
+bottom: 5px;
+right: 10%;
+color: blue;
+text-decoration: underline;
+}
+
+.cheat{
+  font-size: .75em;
+}
+
+.stat{
+  color: white;
+  position: absolute;
+  top: -10.5px;
+  font-size: .5em;
+  z-index: 20;
+  width: 50%;
+  /*right: 50%;*/
+}
+
+.faceButton{
+  width: 20vw;
+  margin: 0 auto;
+}
+
+.logDiv{
+  wdith: 100vw;
+  text-align: center;
+  margin-top: 20px;
+}
