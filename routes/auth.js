@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport')
-var knex = require('knex')({
-  client: 'pg',
-  connection: process.env.DATABASE_URL || 'postgress://localhost/plf'
-})
+var knex = require('../db/knex')
 
 function User(){
 return knex('users');
