@@ -48,7 +48,7 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/callback/",
+  callbackURL: "http://plf-test.herokuapp.com/auth/facebook/callback/",
   enableProof: false
 },
   function(accessToken, refreshToken, profile, done){
