@@ -9,7 +9,10 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL + '?ssl=true'
+    connection: process.env.DATABASE_URL + '?ssl=true',
+    port: 5432,
+    user: 'oarvjbkyuhobmg',
+    password: 'uzEYEcmew_fRg0XEiNPK9x12EJ'
   }
 
 };
