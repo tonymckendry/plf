@@ -118,6 +118,7 @@ a {
   border-top: 1px solid black;
   padding-left: 10vw;
   padding-right: 10vw;
+  padding-top: 10px;
   position: relative;
   z-index: 1;
 }
@@ -140,7 +141,7 @@ a {
 
 .tourDateLeft{
   display: inline-block;
-  top: 10px;
+  top: -5px;
   position: absolute;
   left: 5vw;
 }
@@ -157,6 +158,7 @@ a {
   vertical-align: middle;
   margin-left: 25vw;
   margin-bottom: 20px;
+  margin-top: -25px;
 }
 
 .tourTime{
@@ -173,7 +175,7 @@ a {
   position: absolute;
   display: inline-block;
   right: 1vw;
-  bottom: 10%;
+  bottom: 12%;
   float: right;
   text-align: left;
   width: 20vw;
@@ -209,6 +211,7 @@ margin: 0 auto;
   font-weight: normal;
   width: 20vw;
   background: transparent;
+  margin-bottom: 10px;
 }
 
 #tourVenue{
@@ -389,7 +392,7 @@ transition:background .5s;
 }
 
 #map{
-  height: 51vh;
+  height: 45vh;
   width: 90vw;
   margin: 0 auto;
   position:absolute;
@@ -528,6 +531,9 @@ transition:background .5s;
 .hued{
   position: relative;
   width: 300px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
 
 .userNamed{
@@ -566,8 +572,8 @@ text-decoration: underline;
   top: -10.5px;
   font-size: .5em;
   z-index: 20;
-  width: 50%;
-  /*right: 50%;*/
+  width: 100%;
+  right: -1%;
 }
 
 .faceButton{
@@ -579,4 +585,46 @@ text-decoration: underline;
   wdith: 100vw;
   text-align: center;
   margin-top: 20px;
+}
+
+.facebookDiv{
+  background-color: #3b539a;
+  width: 200px;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.facebookDiv:hover{
+  background-color: #2f477a;
+}
+
+.facebookDiv span{
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.facebookDiv img{
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 9px;
+}
+
+.center{
+  text-align: center;
+}
+
+#userText{
+  font-size: .7em;
+  position: absolute;
+  bottom: 15px;
+  left: 44%;
+  font-weight: lighter;
+}
+
+.titleText{
+   margin-top:
 }

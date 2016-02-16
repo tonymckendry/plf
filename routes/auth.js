@@ -47,4 +47,10 @@ router.get('/signout', function(req, res, next) {
   res.redirect("/");
 });
 
+router.get('/profile', function(req, res, next){
+  User().where('id', req.cookies.id).first().then(function(result){
+    res.render('auth/profile', {username: req.cookies.username, user: result})
+  })
+})
+
 module.exports = router;

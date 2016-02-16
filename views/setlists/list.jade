@@ -18,8 +18,10 @@ block content
             b Location: 
               span#tourText #{results[index].city}, #{results[index].state}, #{results[index].country}
         div(class='tourDateRight')  
-          p#tourVenue 
+          p#tourVenue.titleText
               span#tourText #{results[index].title}
+              if (results[index].username)
+                span#userText Submitted by #{results[index].username}
         div(class='setTime')
           p#tourTime 
             b Venue: 

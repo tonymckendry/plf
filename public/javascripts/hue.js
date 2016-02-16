@@ -59,8 +59,8 @@ function hueMaker(){
     var c = 0
   }
   else if (rand > 2){
-    var a = 0
-    var b = 0
+    var a = 100
+    var b = 100
     var c = 100
   }
   else {

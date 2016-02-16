@@ -1,5 +1,8 @@
 extends ../layout
 block content
-  .logDiv
-    a.faceButton(href='/auth/facebook')
-      img.faceButton(type="submit" src='/images/facebook_login.png' class="btn btn-social btn-twitter")
+  a(href='/auth/facebook')
+    .facebookDiv
+      img(src='/images/facebookIcon.png')
+      span Log in with Facebook
+  .center
+    h2 Click the button above to automatically verify your identity using Facebook - you will be prompted to create a username if you do not already have an account. 

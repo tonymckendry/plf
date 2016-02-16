@@ -33,7 +33,7 @@ router.get('/', function(req, res, next){
       })
     }
     console.log(list)
-    res.render('songs/index', {results: results})
+    res.render('songs/index', {results: results, username: req.cookies.username})
   })
 })
 

@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
 router.get('/tour', function(req, res, next){
   tour().select().then(function(result){
     console.log(result)
-    res.render('tour/index', {result: result})
+    res.render('tour/index', {result: result, username: req.cookies.username})
   })
 })
 
@@ -53,7 +53,7 @@ router.get('/music', function(req, res, next){
       }
     }
     console.log(albums[0])
-    res.render('music/index', {albums: albums, singles: singles, others: others})
+    res.render('music/index', {albums: albums, singles: singles, others: others, username: req.cookies.username})
   })
 })
 
@@ -64,7 +64,7 @@ router.get('/music/:name', function(req, res, next){
     track = result;
     albums().where('name', req.params.name).then(function(results){
       album = results
-      res.render('music/show', {tracks: track, album: album})
+      res.render('music/show', {tracks: track, album: album, username: req.cookies.username})
       console.log(album)
       console.log(track);
     })
@@ -78,7 +78,7 @@ router.get('/music/song/:name', function(req, res, next){
       setlist().select('title').distinct().then(function(bResult){
         // console.log(aResult[0].album)
         var total = bResult.length;
-        res.render('music/song/show', {results: results, album: aResult, total: total})
+        res.render('music/song/show', {results: results, album: aResult, total: total, username: req.cookies.username})
 
       })
     })
@@ -114,7 +114,7 @@ router.get('/setlists', function(req, res, next){
     console.log(yyyy)
     tour().select().first().then(function(tour){
 
-      res.render('setlists/index', {results: objList, today:today, tour: tour})
+      res.render('setlists/index', {results: objList, today:today, tour: tour, username: req.cookies.username})
     })
 
   })
@@ -132,6 +132,7 @@ router.get('/setlists/list', function(req, res, next){
       obj.city = results[i].city
       obj.state = results[i].state
       obj.country = results[i].country
+      obj.username = results[i].username
       var count = 0;
       for (var j = 0; j < results.length; j++) {
         if (results[j].title == results[i].title){
@@ -150,7 +151,7 @@ router.get('/setlists/list', function(req, res, next){
 })
 
 router.get('/setlists/new', function(req, res, next){
-  res.render('setlists/new')
+  res.render('setlists/new', {username: req.cookies.username})
 })
 //////////////////////////////////////////////////////////////////////////////////
 router.post('/setlists', function(req, res){
@@ -163,7 +164,8 @@ router.post('/setlists', function(req, res){
       date: req.body.date,
       venue: req.body.venue,
       city: req.body.city,
-      state: req.body.state
+      state: req.body.state,
+      username: req.cookies.username
     }
     var song = req.body['song' + (i+1).toString()]
     var notes = req.body['notes' + (i+1).toString()]
@@ -184,7 +186,7 @@ router.get('/setlists/:title', function(req, res, next){
   setlist().where('title', title).then(function(results){
     console.log(results)
     var count = results.length
-    res.render('setlists/show', {results: results, count: count})
+    res.render('setlists/show', {results: results, count: count, username: req.cookies.username})
   })
 })
 
@@ -214,7 +216,7 @@ router.get('/venues', function(req, res, next){
       }
     }
     console.log(objList)
-    res.render('venues/index', {results: objList})
+    res.render('venues/index', {results: objList, username: req.cookies.username})
   })
 })
 
@@ -236,7 +238,7 @@ router.get('/venues/:name', function(req, res, next){
         list.push(results[i].title)
       }
     }
-    res.render('venues/show', {results: objList})
+    res.render('venues/show', {results: objList, username: req.cookies.username})
     console.log(objList)
   })
 })
