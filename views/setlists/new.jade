@@ -42,7 +42,9 @@ block content
               input#setSubmit(type='submit') 
       button#addSong + song
   else
-    h1 You need be be logged in to add a new setlist
+    h1 You need be be 
+      a(href='/auth/signin')logged in 
+      h1 add a new setlist
         
   script(type='text/javascript' src='https://code.jquery.com/jquery-2.2.0.min.js')
   script(type='text/javascript' src='/javascripts/jquery.jadedom.js')
