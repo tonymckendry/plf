@@ -12,7 +12,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 
 /////////////DB/////////////
-var knex = require('../db/knex')
+var knex = require('/db/knex')
 
 function User(){
   return knex('users')
