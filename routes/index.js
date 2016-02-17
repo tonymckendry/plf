@@ -143,7 +143,7 @@ router.get('/setlists/list', function(req, res, next){
       }
     }
     console.log(objList)
-    res.render('setlists/list', {results: objList})
+    res.render('setlists/list', {results: objList, username: req.cookies.username})
   })
 })
 
