@@ -1,8 +1,11 @@
 extends ../layout
 block content
+  link(rel='stylesheet', href='/stylesheets/setlists.css')
   br
   div#tourHead
     p Setlists
+    a(href='/setlists/new')
+      button.hue(class='green') + Add Setlist
   br
   each val, index in results
     a(href="/setlists/" + results[index].title)
