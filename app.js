@@ -12,10 +12,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 
 /////////////DB/////////////
-var knex = require('knex')({
-  client: 'pg',
-  connection: 'postgres://localhost/plf'
-})
+var knex = require('../db/knex')
 
 function User(){
   return knex('users')
