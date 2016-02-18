@@ -71,6 +71,10 @@ a {
   margin-left: -.5vw;
 }
 
+#firstNav ul li{
+  width: 110%;
+}
+
 #drop{
   display: none;
   position: absolute;
@@ -637,4 +641,8 @@ text-decoration: underline;
 
 .titleText{
    margin-top:
+}
+
+.songcount{
+  margin-top: 0;
 }

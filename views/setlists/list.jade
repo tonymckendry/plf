@@ -28,7 +28,10 @@ block content
         div(class='setTime')
           p#tourTime 
             b Venue: 
-              span#tourText #{results[index].venue}
+              if results[index].venue.length > 32
+                span#tourText #{results[index].venue.substr(0,29)}...
+              else
+                span#tourText #{results[index].venue}
           p#tourTime
             b Songs:
               span#tourText #{results[index].count}
